@@ -1,0 +1,43 @@
+
+
+<div class="container register">
+    <div class="row">
+        <div class="col-md-9 register-right">
+            
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div style="flex-direction: row;">
+                    <h2 class="register-heading">User Profile Details</h2>&nbsp;&nbsp;
+                   
+                    </div>
+                    <div class="row register-form" style="margin-top:50px;">
+                        <div class="col-md-6">
+                    
+                            <div class="form-group">
+                                <h4>First Name: <label value="firstName">{{userRegister.firstName}}</label></h4>
+                            </div>
+                            <div class="form-group">
+                               <h4>Last Name: <label value="lastName">{{userRegister.lastName}}</label></h4>
+                            </div>
+                            <div class="form-group">
+                                <div class="maxl">
+                                    <h4>Gender: <label value="gender">{{userRegister.gender}}</label></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <h4>Email: <label value="email">{{userRegister.email}}</label></h4>
+                            </div>
+                            <div class="form-group">
+                                <h4>Phone Number: <label value="email">{{userRegister.phoneNumber}}</label></h4>
+                            </div>
+                            <input type="submit" style="float:right" type="submit" (click)="editUser()" class="cart-button" value="Edit"/>
+                        </div>
+                    </div>
+                
+       </div>
+       </div>
+        </div>
+    </div>
+    </div>

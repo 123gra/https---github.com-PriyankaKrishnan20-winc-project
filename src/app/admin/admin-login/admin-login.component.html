@@ -1,0 +1,102 @@
+<div class="row" >
+  <div class="col s12">
+    <div class="card" style="background-color:rgba(68, 13, 13, 0.76)">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+        <form #eventForm="ngForm" (ngSubmit)="onSubmitTemplateBased(eventForm)">
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="eventService.selectedEvent._id">
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>Description:<label class="red-text">*</label> </label>
+        <input type="text" name="description" #name="ngModel" [(ngModel)]="eventService.selectedEvent.description" placeholder="enter event description" required>
+       </div>
+       </div>
+       <div class ="row">
+        <div class="input-field col s12">
+       <label>Name:<label class="red-text">*</label> </label>
+
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="eventService.selectedEvent.name" placeholder="enter event city" required>
+      </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>eventdate:<label class="red-text">*</label> </label>
+
+         <input type="text" name="eventdate" #name="ngModel" [(ngModel)]="eventService.selectedEvent.eventDate" placeholder="enter event date" required>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>category:<label class="red-text">*</label> </label>
+
+         <input type="text" name="category" #name="ngModel" [(ngModel)]="eventService.selectedEvent.category" placeholder="enter event category" required>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>vipPrice:<label class="red-text">*</label> </label>
+
+         <input type="text" name="vipPrice" #name="ngModel" [(ngModel)]="eventService.selectedEvent.vipPrice" placeholder="enter event vipPrice" required>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>City:<label class="red-text">*</label> </label>
+
+         <input type="text" name="city" #name="ngModel" [(ngModel)]="eventService.selectedEvent.city" placeholder="enter event city" required>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+        <label>gaPrice:<label class="red-text">*</label> </label>
+
+         <input type="text" name="gaPrice" #name="ngModel" [(ngModel)]="eventService.selectedEvent.gaPrice" placeholder="enter event status" required>
+        </div>
+      </div>
+      <div class ="row">
+        <div class="input-field col s12">
+      <button class="btn btn-primary right" type="button" (click)="resetForm(eventForm)">Reset</button>
+       &NonBreakingSpace; &NonBreakingSpace; &NonBreakingSpace;<button class="btn btn-primary right"  type="submit" [disabled]="!eventForm.valid" >Submit</button>
+      </div>
+    </div>
+      </form>
+        </div>
+        <div class="col s7">
+          <table class="responsive-table" style="background-color:rgb(48, 80, 52);border-style: groove;width:50%;" >
+              <thead >
+                <tr>
+                  <th>Description</th>
+                  <th>Name</th>
+                  <th>eventdate</th>
+                  <th>City</th>
+                  <th>category</th>
+                  <th>vipPrice</th>
+                  <th>gaPrice</th>
+                </tr>
+              </thead>
+              <tr *ngFor="let evt of eventService.events">
+                <td>{{evt.description}}</td>
+                <td>{{evt.name}}</td>
+                <td>{{evt.eventDate}}</td>
+                <td>{{evt.city}}</td>
+                <td>{{evt.category}}</td>
+                <td>{{evt.vipPrice}}</td>
+                <td>{{evt.gaPrice}}</td>
+                <td>
+                  <a class="action-btn">
+                      <button class="btn-primary" (click)="onEdit(evt)">Edit</button>
+                  </a>
+                  <a class="action-btn">
+                    <button class="btn-secondary" (click)="onDelete(evt._id,eventForm)">Delete</button>
+                </a>
+                </td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+

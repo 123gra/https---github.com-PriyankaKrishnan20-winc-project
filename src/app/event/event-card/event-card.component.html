@@ -1,0 +1,24 @@
+<div class="event-list" (click)="eventDetails()">
+  <li>
+    <time>
+      <span class="day">{{ date }}</span>
+      <span class="month">{{ month }}</span>
+      <span class="year">{{ year }}</span>
+      <span class="time"></span>
+    </time>
+    <img alt="{{ evt.name }}" src="{{ evt.image }}" />
+    <div class="info">
+      <h2 class="title">{{ evt.name }}</h2>
+      <p class="desc">{{ evt.description }}</p>
+      <p class="tags">{{ evt.tags }}</p>
+      <ul>
+        <li style="width: 33%" title="VIP Price">
+          INR {{ evt.vipPrice }} <span class="fa fa-male"></span>
+        </li>
+        <li style="width: 34%" title="GA Price">
+          INR {{ evt.gaPrice }}<span class="fa fa-child"></span>
+        </li>
+      </ul>
+    </div>
+  </li>
+</div>

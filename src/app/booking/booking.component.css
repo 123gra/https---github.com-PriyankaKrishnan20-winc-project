@@ -1,0 +1,9 @@
+table > tr > th,
+table > tr > td {
+  width: 25%;
+  padding: 3px;
+}
+
+label {
+  padding-right: 5px;
+}
